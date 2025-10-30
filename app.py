@@ -24,11 +24,11 @@ def index():
         try:
             # yt-dlp options for public videos only
             ydl_opts = {
-                'format': 'best',
-                'outtmpl': output_path,
-                'noplaylist': True,
-                'quiet': True
-            }
+        'format': 'best',
+        'outtmpl': output_path,
+        'cookiefile': 'cookies.txt',  # <--- this is the key line
+       }
+
 
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 ydl.download([url])
